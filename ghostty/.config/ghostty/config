@@ -1,0 +1,23 @@
+theme = "Abernathy"
+background-opacity = 0.5
+background-blur = 8
+
+term = xterm-256color
+font-size = 11 
+font-family = "JetBrains Mono"
+
+keybind = cmd+r=reload_config
+
+keybind = ctrl+cmd+up=new_split:up
+keybind = ctrl+cmd+down=new_split:down
+keybind = ctrl+cmd+left=new_split:left
+keybind = ctrl+cmd+right=new_split:right
+keybind = ctrl+cmd+shift+up=resize_split:up,10
+keybind = ctrl+cmd+shift+down=resize_split:down,10
+keybind = ctrl+cmd+shift+left=resize_split:left,10
+keybind = ctrl+cmd+shift+right=resize_split:right,10
+mouse-hide-while-typing=true
+
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll
