@@ -72,6 +72,12 @@ local terminal_state = {
   is_open = false
 }
 
+vim.keymap.set("n", "<leader>lg", function()
+    -- สั่งรันคำสั่งเปิด popup ของ tmux โดยตรง
+    local cmd = "tmux display-popup -E -w 80% -h 80% lazygit"
+    os.execute(cmd)
+end, { desc = "Open Lazygit in Tmux Popup", silent = true })
+
 local function FloatingTerminal()
   -- If terminal is already open, close it (toggle behavior)
   if terminal_state.is_open and vim.api.nvim_win_is_valid(terminal_state.win) then
