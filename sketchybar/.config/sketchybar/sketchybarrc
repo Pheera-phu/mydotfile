@@ -1,0 +1,36 @@
+#!/bin/bash
+
+PLUGINS_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+sketchybar --bar position=top height=25 blur_radius=30 color=0x40000000
+
+default=(
+  icon.font="SF Pro:Semibold:13.0"
+  label.font="SF Pro:Semibold:13.0"
+  icon.color=0xffffffff
+  label.color=0xffffffff
+  # background.color=0x44ffffff
+  background.corner_radius=5
+  background.height=17
+  icon.padding_left=1
+  icon.padding_right=1
+  label.padding_left=1
+  label.padding_right=1
+
+  icon.y_offset=1
+  label.y_offset=1
+)
+sketchybar --default "${default[@]}"
+
+# LEFT_SIDE_ITEMS #
+source $ITEM_DIR/aerospace.sh
+
+# -- Right Side Of Notch Items --
+source $ITEM_DIR/media.sh
+
+# RIGHT_SIDE_ITEMS #
+source $ITEM_DIR/calendar.sh
+source $ITEM_DIR/wifi.sh
+source $ITEM_DIR/battery.sh
+
+sketchybar --update
