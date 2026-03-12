@@ -9,7 +9,6 @@ config.colors = {
   cursor_border = "white"
 }
 
-config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
   left = 0,
@@ -18,28 +17,7 @@ config.window_padding = {
   bottom = 0
 }
 
-config.background = {
-  {
-    source = {
-      File = "/.config/wezterm/assets/a_triangle_shaped_object_with_a_blue_and_white_light.png",
-    },
-    hsb = {
-      hue = 1.0,
-      saturation = 1.02,
-      brightness = 0.25
-    },
-    width = "100%",
-    height = "100%"
-  },
-  {
-    source = {
-      Color = "#282c35"
-    },
-    width = "100%",
-    height = "100%",
-    opacity = 0.55
-  }
-}
+config.window_background_opacity = 0.5
 
 config.max_fps = 120
 config.prefer_egl = true
