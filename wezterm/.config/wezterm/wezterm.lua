@@ -4,6 +4,9 @@ local config = wezterm.config_builder()
 config.font_size = 12
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 
+config.treat_east_asian_ambiguous_width_as_wide = false
+config.line_height = 1.1
+
 config.colors = {
   cursor_bg = "white",
   cursor_border = "white"
