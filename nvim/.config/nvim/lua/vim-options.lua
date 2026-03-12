@@ -1,6 +1,6 @@
 vim.g.lazyvim_check_order = false
 vim.opt.relativenumber = true
-vim.opt.ambw = "double"
+-- vim.opt.ambw = "double"
 vim.opt.termguicolors = true
 
 vim.g.diagnostics_active = true
