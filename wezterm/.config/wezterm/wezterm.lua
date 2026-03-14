@@ -21,6 +21,7 @@ config.window_padding = {
 }
 
 config.window_background_opacity = 0.5
+config.macos_window_background_blur = 30
 
 config.max_fps = 120
 config.prefer_egl = true
