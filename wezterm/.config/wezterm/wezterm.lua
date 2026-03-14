@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
-config.font_size = 12
+config.font_size = 11
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
 
 config.treat_east_asian_ambiguous_width_as_wide = false
