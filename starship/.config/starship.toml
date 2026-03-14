@@ -1,4 +1,4 @@
-# add_newline = true
+add_newline = true
 # command_timeout = 200
 # format = "[$directory$git_branch$git_status]($style)$character"
 #
@@ -15,6 +15,7 @@ $git_branch\
 $git_status\
 $fill\
 $memory_usage\
+$nodejs\
 $line_break\
 $character"""
 
@@ -49,5 +50,8 @@ repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($r
 disabled = false
 threshold = -1
 symbol = " "
-style = "bold dimmed green"
+style = "dimmed green"
 format = "$symbol [$ram ($ram_pct)]($style) "
+
+[nodejs]
+format = " [$symbol($version )]($style)"
