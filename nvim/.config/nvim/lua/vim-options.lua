@@ -170,3 +170,14 @@ vim.keymap.set("t", "<Esc>", function()
     terminal_state.is_open = false
   end
 end, { noremap = true, silent = true, desc = "Close floating terminal from terminal mode" })
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',
+    source = "always",
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
