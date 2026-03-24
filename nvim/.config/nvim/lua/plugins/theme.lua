@@ -109,6 +109,22 @@ return {
     end
   },
   {
+    "rose-pine/neovim",
+    name = "rose-pine",
+  },
+  {
+    "catppuccin/nvim", 
+    name = "catppuccin", 
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        background = { 
+          dark = "mocha",
+        },
+      })
+    end
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "kanagawa-dragon",
