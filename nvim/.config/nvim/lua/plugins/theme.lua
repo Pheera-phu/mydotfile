@@ -125,9 +125,25 @@ return {
     end
   },
   {
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "aura-dark",
+        callback = function()
+          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#25233a" })
+          vim.api.nvim_set_hl(0, "Visual", { bg = "#3e3859" })
+        end,
+      })
+      vim.cmd([[colorscheme aura-dark]])
+    end
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave",
+      colorscheme = "aura-dark",
     },
   },
 }
