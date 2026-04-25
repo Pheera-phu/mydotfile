@@ -135,9 +135,9 @@ return {
         callback = function()
           vim.api.nvim_set_hl(0, "CursorLine", { bg = "#25233a" })
           vim.api.nvim_set_hl(0, "Visual", { bg = "#3e3859" })
+          vim.api.nvim_set_hl(0, "Pmenu", { bg = "#0f0c24" })
         end,
       })
-      vim.cmd([[colorscheme aura-dark]])
     end
   },
   {
