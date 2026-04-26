@@ -98,6 +98,34 @@ return {
   config = function(_, opts)
     require("snacks").setup(opts)
 
+    local gh_actions = require("snacks.gh.actions")
+    local gh_edit = gh_actions.edit
+    gh_actions.edit = function(ctx)
+      local win_resolve = Snacks.win.resolve
+      Snacks.win.resolve = function(...)
+        local ret = win_resolve(...)
+        if type(ret) == "table" then
+          if type(ret.footer_keys) == "table" then
+            for i, key in ipairs(ret.footer_keys) do
+              if key == "<c-s>" then
+                ret.footer_keys[i] = "<c-x>"
+              end
+            end
+          end
+          if type(ret.keys) == "table" and type(ret.keys.submit) == "table" and ret.keys.submit[1] == "<c-s>" then
+            ret.keys.submit[1] = "<c-x>"
+          end
+        end
+        return ret
+      end
+
+      local ok, err = pcall(gh_edit, ctx)
+      Snacks.win.resolve = win_resolve
+      if not ok then
+        error(err)
+      end
+    end
+
     Snacks.toggle.new({
       id = "ufo",
       name = "Enable/Disable ufo",
