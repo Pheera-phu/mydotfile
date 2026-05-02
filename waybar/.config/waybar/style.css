@@ -1,14 +1,19 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-
+  /* background-color: transparent; */
+  /* background-color: #111111; */
   border: none;
-  border-radius: 0;
   min-height: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'JetBrainsMono Nerd Font Mono';
   font-size: 12px;
+}
+
+window#waybar {
+  background: none;
+  color: white;
 }
 
 .modules-left {
@@ -20,6 +25,7 @@
 }
 
 #workspaces button {
+  transition: all 200ms ease-in-out;
   all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
@@ -27,9 +33,27 @@
   font-weight: bold;
 }
 
+#workspaces button.active {
+  transition: all 200ms ease-in-out;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  border-bottom: 3px solid black;
+  min-width: 20px;
+}
+
 #workspaces button.empty {
   opacity: 0.5;
   font-weight: bold;
+}
+
+#custom-media,
+#clock {
+  /* background-color: black; */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #cpu,
