@@ -160,4 +160,22 @@
             ),
         ],
     ),
+    cava: (
+      bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
+      inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
+
+      inverted_bar_as_mask: false,
+
+      bg_color: None, 
+      bar_width: 1, 
+      bar_spacing: 1, 
+
+      orientation: Bottom,
+
+      bar_color: Gradient({
+            0: "rgb(  0, 255,   0)",
+           50: "rgb(  0,   0, 255)",
+          100: "rgb(255,   0,   0)",
+      })
+    ),
 )
