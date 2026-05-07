@@ -17,7 +17,7 @@
   highlighted_item_style: (fg: "#A6E3A1", modifiers: "Bold"),
   current_item_style: (fg: "#89B4FA", bg: "#1E1E2E", modifiers: "Bold"),
   borders_style: (fg: "#6e6a86", modifiers: "Bold"),
-  highlight_border_style: (fg: "#f6c177"),
+  highlight_border_style: (fg: "#6e6a86"),
   progress_bar: (
     symbols: ["┄", "┅", "━"],
     track_style: (fg: "#26233a"),
@@ -52,22 +52,26 @@
         highlighted_item_style: (fg: "#191724", modifiers: "Bold"),
         default: (kind: Property(Filename), style: (fg: "#6e6a86"),)
       ),
+      label_prop: (kind: Text("Title")),
       width: "50%",
     ),
     (
       prop: (kind: Property(Artist), style: (fg: "#ebbcba"),
         default: (kind: Text("Unknown Artist"), style: (fg: "#908caa"))
       ),
+      label_prop: (kind: Text("Artist")),
       width: "45%",
     ),
     (
       prop: (kind: Property(Album), style: (fg: "#ebbcba"),
         default: (kind: Text("Album"), style: (fg: "#908caa"))
       ),
+      label_prop: (kind: Text("Album")),
       width: "45%",
     ),
     (
       prop: (kind: Property(Duration), style: (fg: "#f6c177")),
+      label_prop: (kind: Text("Time")),
       width: "10%",
       alignment: Right,
     ),
@@ -154,8 +158,8 @@
         ),
       ),
       (
-        size: "3",
-        borders: "TOP | BOTTOM",
+        size: "1",
+        //borders: "TOP | BOTTOM",
         pane: Pane(ProgressBar),
       ),
     ],
