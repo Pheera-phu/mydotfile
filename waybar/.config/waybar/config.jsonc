@@ -179,16 +179,16 @@
     "escape": true,
     "return-type": "json",
     "max-length": 50,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/script/mediaplayer.py", // Script in resources/custom_modules folder
+    "on-click": "$HOME/.config/waybar/script/media-control.sh toggle",
+    "on-click-right": "$HOME/.config/waybar/script/media-control.sh stop",
+    "smooth-scrolling-threshold": 10,
+    "on-scroll-up": "$HOME/.config/waybar/script/media-control.sh next",
+    "on-scroll-down": "$HOME/.config/waybar/script/media-control.sh prev",
+    "exec": "$HOME/.config/waybar/script/media-unified.py",
   },
   "custom/exit": {
     "format": "",
     "on-click": "omarchy-menu system",
     "tooltip": false
-  }
+  },
 }

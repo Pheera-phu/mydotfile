@@ -127,7 +127,8 @@ tooltip {
   color: #a55555;
 }
 
-#custom-media {
+#custom-media,
+#mpd {
   font-weight: bold;
   font-size: 12;
 }
