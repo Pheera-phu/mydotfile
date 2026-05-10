@@ -1,10 +1,11 @@
 theme = "Abernathy"
-background-opacity = 0.5
+background-opacity = 0.1
 background-blur = 8
 
 term = xterm-256color
-font-size = 11 
+font-size = 11.5 
 font-family = "JetBrains Mono"
+font-style = Bold
 
 keybind = cmd+r=reload_config
 
@@ -18,6 +19,7 @@ keybind = ctrl+cmd+shift+left=resize_split:left,10
 keybind = ctrl+cmd+shift+right=resize_split:right,10
 mouse-hide-while-typing=true
 
+cursor-style-blink = true
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll

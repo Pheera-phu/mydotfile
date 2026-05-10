@@ -1,6 +1,8 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
+config.front_end = "WebGpu"
+
 config.font_size = 11
 -- config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" })
@@ -25,6 +27,7 @@ config.window_background_opacity = 0.5
 config.macos_window_background_blur = 30
 
 config.max_fps = 120
+config.animation_fps = 60
 config.prefer_egl = true
 
 return config
