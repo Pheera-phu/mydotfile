@@ -41,7 +41,7 @@ renamed    = ""
 deleted    = ""
 
 [git_branch]
-format = ' [$symbol$branch(:$remote_branch)]($style) '
+format = ' ([$symbol$branch(:$remote_branch)]($style)) '
 symbol = ' '
 
 [character]
@@ -49,10 +49,11 @@ error_symbol = "[✗](bold red)"
 success_symbol = "[❯](bold green)"
 
 [directory]
+home_symbol = ' ~'
 truncation_length = 2
 truncation_symbol = " …/"
 repo_root_style = "bold cyan"
-repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
+repo_root_format = " [$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
 [memory_usage]
 disabled = false

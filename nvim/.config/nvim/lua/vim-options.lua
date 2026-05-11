@@ -175,3 +175,7 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
+vim.keymap.set("n", "<leader>nd", function()
+  require("noice").cmd("dismiss")
+end)
