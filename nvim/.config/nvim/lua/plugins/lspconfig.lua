@@ -1,19 +1,17 @@
 return {
-  -- core LSP
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason.nvim", -- ตัวจัดการ LSP/DAP/Linter
-      "williamboman/mason-lspconfig.nvim", -- bridge ระหว่าง mason กับ lspconfig
-      "hrsh7th/nvim-cmp", -- auto-completion
-      "hrsh7th/cmp-nvim-lsp", -- source สำหรับ LSP
-      "L3MON4D3/LuaSnip", -- snippets
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
     },
     config = function()
-      -- init mason
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { -- ติดตั้ง LSP นี้อัตโนมัติ
+        ensure_installed = {
           "intelephense", 
           "eslint",
           "tailwindcss",
@@ -26,7 +24,6 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local servers  = { "tsserver", "eslint", "tailwindcss", "cssls" }
 
-      --PHP, LARAVEL
       vim.lsp.config("intelephense", {
         capabilities = capabilities,
       })
@@ -53,6 +50,16 @@ return {
         }
       })
       vim.lsp.enable("vue_ls")
+
+      vim.lsp.config("lua_ls", {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" }
+            }
+          }
+        }
+      })
     end,
   },
 }

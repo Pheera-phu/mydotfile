@@ -6,17 +6,16 @@ return {
     {
       "rcarriga/nvim-notify",
       opts = {
-        background_colour = "#000000", -- ใส่โค้ดสีพื้นหลังที่ต้องการ (เช่น สีดำ)
+        background_colour = "#000000",
       },
     },
-    "nvim-treesitter/nvim-treesitter", -- แนะนำให้มีเพื่อ syntax highlight ใน command line
+    "nvim-treesitter/nvim-treesitter",
   },
   opts = {
     cmdline = {
-      view = "cmdline", -- ใช้แถบ command line ด้านล่างแบบปกติ
+      view = "cmdline",
     },
     lsp = {
-      -- เชื่อมต่อกับ lsp เพื่อแสดง documentation/hover ในแบบ floating
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,

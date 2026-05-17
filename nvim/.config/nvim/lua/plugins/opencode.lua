@@ -1,13 +1,8 @@
 return {
   "nickjvandyke/opencode.nvim",
-  version = "*", -- Latest stable release
+  version = "*",
   dependencies = { "folke/snacks.nvim" },
   config = function()
-    vim.g.opencode_opts = {
-      -- กำหนด port คงที่เพื่อให้ Neovim หา server เจอข้าม window/session
-      -- และจะไม่สร้าง split ใหม่ถ้าพบว่ามี server รันอยู่ที่ port นี้แล้ว
-      -- port = 31337,
-    }
     vim.o.autoread = true
   end,
   keys = {
@@ -22,7 +17,7 @@ return {
     {
       "<leader>oa",
       function()
-        require("opencode").ask("@this: ", { submit = true }) 
+        require("opencode").ask("@this: ", { submit = true })
       end,
       desc = "Ask opencode about selection",
       mode = "v",

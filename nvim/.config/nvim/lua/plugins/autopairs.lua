@@ -1,13 +1,13 @@
 return {
   "windwp/nvim-autopairs",
   event = "InsertEnter",
-  dependencies = { "nvim-treesitter/nvim-treesitter" }, -- แนะนำแต่ไม่บังคับ
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     local npairs = require("nvim-autopairs")
 
     npairs.setup({
-      check_ts = true, -- ใช้ treesitter ช่วยตัดสินใจ
-      fast_wrap = { map = "<M-e>" }, -- Alt+e เพื่อห่อข้อความเร็ว ๆ
+      check_ts = true,
+      fast_wrap = { map = "<M-e>" },
       disable_filetype = { "TelescopePrompt", "vim" },
     })
 

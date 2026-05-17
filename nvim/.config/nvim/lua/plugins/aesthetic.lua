@@ -1,23 +1,16 @@
 return {
   {
-    "bjarneo/vantablack.nvim",
-    priority = 1000,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-  },
-  {
-    "bluz71/vim-moonfly-colors", 
-    name = "moonfly", 
-    lazy = false, 
-    priority = 1000, 
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "evergarden",
+    },
   },
   {
     'everviolet/nvim', name = 'evergarden',
-    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+    priority = 1000,
     opts = {
       theme = {
-        variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
+        variant = 'fall',
         accent = 'bg0',
       },
       editor = {
@@ -35,7 +28,7 @@ return {
     config = function()
       require 'evergarden'.setup {
         theme = {
-          variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
+          variant = 'fall',
           accent = 'bg0',
         },
         editor = {
@@ -105,45 +98,53 @@ return {
           neotree = true,
         },
       }
-      -- vim.cmd('colorscheme evergarden')
     end
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-  },
-  {
-    "catppuccin/nvim", 
-    name = "catppuccin", 
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
       require("catppuccin").setup({
-        background = { 
+        background = {
           dark = "mocha",
         },
       })
     end
   },
   {
-    "baliestri/aura-theme",
-    lazy = false,
-    priority = 1000,
-    config = function(plugin)
-      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "aura-dark",
-        callback = function()
-          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#25233a" })
-          vim.api.nvim_set_hl(0, "Visual", { bg = "#3e3859" })
-          vim.api.nvim_set_hl(0, "Pmenu", { bg = "#0f0c24" })
-        end,
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require('lualine').setup({
+        options = {
+          theme = 'everforest'
+        }
       })
     end
   },
   {
-    "LazyVim/LazyVim",
+    "sphamba/smear-cursor.nvim",
     opts = {
-      colorscheme = "evergarden",
+      smear_between_buffers = true,
+      smear_between_neighbor_lines = true,
+      scroll_buffer_space = true,
+      legacy_computing_symbols_support = false,
+      smear_insert_mode = true,
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      local config = require("nvim-treesitter")
+      config.setup({
+        ensure_installed = {"lua", "javascript", "html", "java", "json", "typescript", "tsx", "php", "c", "cpp", "css", "blade"},
+        highlight = { enable = true },
+        indent = { enable = true }
+      })
+    end
+  },
+  {
+    "vimpostor/vim-tpipeline"
+  }
 }

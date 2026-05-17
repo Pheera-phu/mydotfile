@@ -30,7 +30,6 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-          -- Tab = next item / expand-or-jump snippet / fallback เป็น Tab ปกติ
           ["<Tab>"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_locally_jumpable() then
               feedkeys("<Plug>luasnip-expand-or-jump")
