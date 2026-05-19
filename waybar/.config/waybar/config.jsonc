@@ -7,8 +7,19 @@
   "position": "bottom",
   "spacing": 0,
   "height": 26,
-  "modules-left": ["custom/exit", "hyprland/workspaces"],
-  "modules-center": ["custom/media", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
+  "modules-left": [
+    "custom/exit", 
+    "hyprland/workspaces", 
+    "custom/tmux"
+  ],
+  "modules-center": [
+    "custom/media", 
+    "custom/update", 
+    "custom/voxtype", 
+    "custom/screenrecording-indicator", 
+    "custom/idle-indicator", 
+    "custom/notification-silencing-indicator"
+  ],
   "modules-right": [
     "group/tray-expander",
     "bluetooth",
@@ -198,4 +209,10 @@
     "on-click": "omarchy-menu system",
     "tooltip": false
   },
+  "custom/tmux": {
+    "exec": "/home/pheera/mydotfile/waybar/.config/waybar/script/tmux_status.sh",
+    "interval": 0.5,
+    "format": " 🀆 {}",
+    "tooltip": false
+  }
 }

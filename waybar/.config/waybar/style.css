@@ -49,6 +49,7 @@ window#waybar {
   font-weight: bold;
 }
 
+#custom-tmux,
 #custom-media,
 #clock {
   /* background-color: black; */
@@ -127,6 +128,7 @@ tooltip {
   color: #a55555;
 }
 
+#custom-tmux,
 #custom-media,
 #mpd {
   font-weight: bold;
