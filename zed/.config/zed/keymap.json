@@ -89,5 +89,32 @@
     "bindings": {
       "ctrl-h": "workspace::ActivatePreviousPane"
     }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "ctrl-j": "editor::AcceptNextLineEditPrediction"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "ctrl-r": [
+        "terminal::SendKeystroke",
+        "ctrl-r"
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+      "bindings": {
+      "ctrl-r": "terminal::RenameTerminal"
+    }
   }
 ]

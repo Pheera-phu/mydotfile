@@ -139,7 +139,22 @@ return {
       local config = require("nvim-treesitter")
       config.setup({
         ensure_installed = {"lua", "javascript", "html", "java", "json", "typescript", "tsx", "php", "c", "cpp", "css", "blade"},
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          disable = function(lang, buf)
+            if lang == "markdown" or lang == "markdown_inline" then
+              return true
+            end
+
+            if lang ~= "lua" then
+              return false
+            end
+
+            local name = vim.api.nvim_buf_get_name(buf)
+            local runtime = vim.env.VIMRUNTIME or ""
+            return runtime ~= "" and vim.startswith(name, runtime .. "/")
+          end,
+        },
         indent = { enable = true }
       })
     end
