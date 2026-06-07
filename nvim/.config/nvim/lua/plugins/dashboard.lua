@@ -5,6 +5,10 @@ return {
     dependencies = { "amansingh-afk/milli.nvim" },
     lazy = false,
     init = function()
+      -- Scope is disabled in opts, but set the global guard early as well so
+      -- no scope listener attaches during startup edge cases.
+      vim.g.snacks_scope = false
+
       vim.api.nvim_create_autocmd("User", {
         pattern = "OilActionsPost",
         callback = function(event)
@@ -75,6 +79,25 @@ return {
     end,
     config = function(_, opts)
       require("snacks").setup(opts)
+
+      -- Neovim 0.12 can hit a Treesitter async parse bug in Snacks scope when
+      -- opening some runtime files through Neo-tree. Fall back to sync parsing
+      -- instead of letting BufReadPost fail.
+      local snacks_util = require("snacks.util")
+      snacks_util.parse = function(parser, range, on_parse)
+        local ok = pcall(parser.parse, parser, range, on_parse)
+        if ok then
+          return
+        end
+
+        local sync_ok = pcall(parser.parse, parser)
+        if sync_ok then
+          on_parse(nil, parser:trees())
+        else
+          on_parse(nil, {})
+        end
+      end
+
       require("milli").snacks({ splash = "robot", loop = true })
       vim.keymap.set("n", "<leader>;", function() require("snacks").dashboard.open() end, { desc = "Dashboard" })
 

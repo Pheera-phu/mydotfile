@@ -26,16 +26,16 @@ local groups = {
 	"TelescopeNormal",
 	"TelescopePromptBorder",
 	"TelescopePromptTitle",
-	-- -- neotree
-	-- "NeoTreeNormal",
-	-- "NeoTreeNormalNC",
-	-- "NeoTreeVertSplit",
-	-- "NeoTreeWinSeparator",
-	-- "NeoTreeEndOfBuffer",
-	-- -- nvim-tree
-	-- "NvimTreeNormal",
-	-- "NvimTreeVertSplit",
-	-- "NvimTreeEndOfBuffer",
+	-- neotree
+	"NeoTreeNormal",
+	"NeoTreeNormalNC",
+	"NeoTreeVertSplit",
+	"NeoTreeWinSeparator",
+	"NeoTreeEndOfBuffer",
+	-- nvim-tree
+	"NvimTreeNormal",
+	"NvimTreeVertSplit",
+	"NvimTreeEndOfBuffer",
 	-- notify
 	"NotifyINFOBody",
 	"NotifyERRORBody",
