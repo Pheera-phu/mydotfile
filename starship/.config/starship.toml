@@ -67,7 +67,7 @@ format = "$symbol [$ram ($ram_pct)]($style) "
 format = " [$symbol($version )]($style)"
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = ' [$hostname](bold blue) '
 trim_at = '.companyname.com'
 disabled = false
