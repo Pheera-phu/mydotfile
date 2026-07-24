@@ -11,6 +11,7 @@ add_newline = true
 
 format = """
 ╭\
+$hostname\
 \\[\
 $directory\
 \\]\
@@ -64,3 +65,9 @@ format = "$symbol [$ram ($ram_pct)]($style) "
 
 [nodejs]
 format = " [$symbol($version )]($style)"
+
+[hostname]
+ssh_only = false
+format = ' [$hostname](bold blue) '
+trim_at = '.companyname.com'
+disabled = false
