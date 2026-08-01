@@ -9,8 +9,8 @@
   "height": 26,
   "modules-left": [
     "custom/exit", 
-    "hyprland/workspaces", 
-    "custom/tmux"
+    "hyprland/workspaces" 
+    // "custom/tmux"
   ],
   "modules-center": [
     "custom/media", 
