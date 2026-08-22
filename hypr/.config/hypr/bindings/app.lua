@@ -1,0 +1,7 @@
+o.bind("SUPER + RETURN", "Terminal", { omarchy = "terminal" })
+o.bind("SUPER + SHIFT + RETURN", "Browser", { omarchy = "browser" })
+o.bind("SUPER + SHIFT + F", "File manager", { omarchy = "nautilus" })
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", { omarchy = "nautilus-cwd" })
+o.bind("SUPER + SHIFT + B", "Browser", { omarchy = "browser" })
+o.bind("SUPER + SHIFT + D", "Docker", { tui = "lazydocker" })
+o.bind("SUPER + SHIFT + M", "Music", { tui = "rmpc" })

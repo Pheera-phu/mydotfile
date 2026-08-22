@@ -1,5 +1,5 @@
 theme = "Abernathy"
-background-opacity = 1
+background-opacity = 0.1
 background-blur = 8
 
 term = xterm-256color
