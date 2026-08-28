@@ -93,4 +93,5 @@
           "enabled": false
       }
   },
+  "lsp_document_colors": "background",
 }

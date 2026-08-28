@@ -116,5 +116,59 @@
       "bindings": {
       "ctrl-r": "terminal::RenameTerminal"
     }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "%": "project_panel::NewFile"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "r": "project_panel::Rename"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "shift-r": "project_panel::Rename"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "d": "project_panel::Delete"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "shift-d": "project_panel::Delete"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "ctrl-shift-a": "workspace::AddFolderToProject"
+    }
+  },
+  {
+    "context": "RecentProjects || RecentProjects > Picker > Editor",
+    "unbind": {
+      "ctrl-shift-a": "workspace::AddFolderToProject"
+    }
+  },
+  {
+    "context": "ProjectPanel&&not_editing",
+    "bindings": {
+      "ctrl-shift-d": "project_panel::RemoveFromProject"
+    }
   }
 ]
