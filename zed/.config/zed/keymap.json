@@ -170,5 +170,23 @@
     "bindings": {
       "ctrl-shift-d": "project_panel::RemoveFromProject"
     }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "bindings": {
+      "ctrl-w h": "pane::SplitHorizontal"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "unbind": {
+      "ctrl-w s": "pane::SplitHorizontal"
+    }
   }
 ]
