@@ -1,6 +1,6 @@
 theme = "Abernathy"
 background-opacity = 0.1
-background-blur = 8
+background-blur = 1 
 
 term = xterm-256color
 font-size = 11.5 
